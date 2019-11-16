@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Screen from './components/Screen';
 import './App.css';
 
 class App extends Component {
@@ -8,23 +8,10 @@ class App extends Component {
     this.state = { apiResponse: '' };
   }
 
-  callAPI() {
-    fetch('http://localhost:9000/testAPI')
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
-  }
-
-  componentWillMount() {
-    this.callAPI();
-  }
-
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p className="App-intro">{this.state.apiResponse}</p>
-        </header>
+        <Screen />
       </div>
     );
   }
