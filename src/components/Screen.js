@@ -3,15 +3,15 @@ import '../styles/Screen.scss';
 
 class Screen extends React.Component {
 	render() {
-		const { w, h } = this.props;
+		const dim = this.props.dim;
 		const styles = {
-			container: {
-				width: w,
-				height: h
+			dimensions: {
+				width: dim.w,
+				height: dim.h
 			}
 		};
 		return (
-			<div className="screen" style={styles.container}></div>
+			<canvas className="screen" style={styles.dimensions}></canvas>
 		);
 	}
 }
